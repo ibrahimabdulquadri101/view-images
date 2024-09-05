@@ -1,21 +1,93 @@
+/* General styling */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
     text-align: center;
-    margin: 0px;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    color: #333;
+    transition: background 0.3s ease-in-out;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-h1, h2, h3 {
-    font-weight: 400;
+
+/* Main container styling */
+.main {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    display: inline-block;
+    width: 50%;
+    margin-left: 20%;
 }
-input:focus{
-    outline: 1px solid blue;
+
+.main:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
-.output {
-    max-width: 100%;
-    max-height: 100%;
+
+h1, h2 {
+    margin: 0;
+    color: #222;
 }
+
+h2 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+h2 small {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+input {
+    padding: 10px;
+    width: 70%;
+    max-width: 500px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #3498db;
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Styling the links */
 a {
-    color: blue;
+    color: #3498db;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
 }
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Image viewer container */
 .view {
     display: none;
     width: 100%;
@@ -23,4 +95,47 @@ a {
     position: absolute;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.output {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.output:hover {
+    transform: scale(1.05);
+}
+
+/* Keyframes for smooth fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    input {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    input {
+        width: 80%;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
